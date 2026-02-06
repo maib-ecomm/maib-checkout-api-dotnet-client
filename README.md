@@ -1,4 +1,4 @@
-[![maib](https://www.maib.md/images/logo.svg)](https://www.maib.md)
+[![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
 # maib Checkout API .NET Client
 
