@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <NoWarn>CS1591</NoWarn>
+        <PackageId>Maib.Checkout.Api.Connector</PackageId>
+        <Title>maib checkout API connector</Title>
+        <Version>1.0.0</Version>
+        <Copyright>maib</Copyright>
+        <PackageTags>maib</PackageTags>
+        <Company>maib</Company>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageIcon>maib-logo.png</PackageIcon>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+        <Description>Connector for maib checkout API</Description>
+        <PackageProjectUrl>https://github.com/maib-ecomm/maib-checkout-api-dotnet-client</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/maib-ecomm/maib-checkout-api-dotnet-client</RepositoryUrl>
+        <RootNamespace>Maib.Checkout.Api.Connector</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.2" />
+        <PackageReference Include="Nullable" Version="1.3.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Text.Json" Version="10.0.2" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="maib-logo.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+</Project>
