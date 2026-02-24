@@ -1,4 +1,4 @@
-[![N|Solid](https://www.maib.md/images/logo.svg)](https://www.maib.md)
+[![maib](https://www.maib.md/images/logo.svg)](https://www.maib.md)
 
 # maib Checkout API .NET Client
 
@@ -20,7 +20,7 @@ The client provides 4 main methods:
 - **Create a new checkout** (`CreateCheckoutAsync`) — creates a new checkout session and returns a *RedirectUrl* where the customer should be redirected to complete the payment.
 - **Get all checkouts** (`GetAllCheckoutsAsync`) — returns checkouts using various filters.
 - **Get a checkout by ID** (`GetCheckoutByIdAsync`) — returns checkout information by its unique identifier.
-- **Refund a payment** (`RefundPaymentAsync`) — requests a refund for a transaction made for a specific checkout. After the refund operation is completed, the success/failed result will be sent to the *CallbackUrl* specified in the request.
+- **Refund a payment** (`RefundPaymentAsync`) — requests a refund for a transaction made for a specific checkout. 
 
 The `GenerateTokenAsync` operation is used to acquire an access token, which is required for other operations.
 
@@ -182,8 +182,7 @@ var request = new RefundPaymentRequest
     PayId = "0F2442CE-7738-4AEA-AD08-54F2E7321086", // Payment identifier received in the callback message
     AccessToken = accessToken,
     Amount = 23.44m,                    // optional; if not specified, full refund will be requested
-    Reason = "Some reason for refund",   // optional
-    CallbackUrl = "https://www.example.com/callback" // optional; refund completion callback URL
+    Reason = "Some reason for refund"   // optional
 };
 
 var refundResult = await _client.RefundPaymentAsync(request, cancellationToken);

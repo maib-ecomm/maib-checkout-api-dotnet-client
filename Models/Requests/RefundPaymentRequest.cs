@@ -23,10 +23,4 @@ public sealed record RefundPaymentRequest : BaseRequest
     /// </summary>
     [JsonPropertyName("reason")]
     public string? Reason { get; set; }
-    
-    /// <summary>
-    /// The URL to which the merchant will receive a callback about the completed refund
-    /// </summary>
-    [JsonPropertyName("callbackUrl")]
-    public string? CallbackUrl { get; set; }
 }
