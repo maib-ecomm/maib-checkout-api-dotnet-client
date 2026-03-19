@@ -10,9 +10,9 @@ using Microsoft.Extensions.Options;
 
 namespace Maib.Checkout.Api.Connector;
 
-internal sealed class MaibCheckoutApiClient : IMaibCheckoutApiClient
+internal class MaibCheckoutApiClient : IMaibCheckoutApiClient
 {
-    public const string HttpClientName = "MaibCheckoutApiClient";
+    protected virtual string HttpClientName => CommonConstants.MaibClientName;
 
     private readonly IHttpClientFactory _clientFactory;
     private ConnectorOptions _options;

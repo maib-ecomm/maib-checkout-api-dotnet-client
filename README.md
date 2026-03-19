@@ -44,8 +44,14 @@ using Maib.Checkout.Api.Connector.Extensions;
 
 2) Register the client:
 
+Production client
 ```csharp
 services.AddMaibCheckoutConnector({IConfiguration instance}, {sectionName});
+```
+
+Sandbox client
+```csharp
+services.AddMaibCheckoutSandboxConnector({IConfiguration instance}, {sectionName});
 ```
 
 Configuration must contain the following section:
@@ -57,16 +63,20 @@ Configuration must contain the following section:
 }
 ```
 
+Production and sandbox url you can find in the e-Commerce maib checkout documentation: https://docs.maibmerchants.md/checkout
+
 3) Dependency injection:
 
 ```csharp
 public class YourService
 {
     private readonly IMaibCheckoutApiClient _client;
+    private readonly IMaibCheckoutApiSandboxClient _sandboxClient;
 
-    public YourService(IMaibCheckoutApiClient client)
+    public YourService(IMaibCheckoutApiClient client, IMaibCheckoutApiSandboxClient sandboxClient)
     {
         _client = client;
+        _sandboxClient = sandboxClient;
     }
 }
 ```
