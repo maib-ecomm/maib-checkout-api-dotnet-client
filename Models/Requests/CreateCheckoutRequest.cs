@@ -66,4 +66,26 @@ public record CreateCheckoutRequest : BaseRequest
     /// </summary>
     [JsonPropertyName("failUrl")]
     public string? FailUrl { get; set; }
+    
+    /// <summary>
+    /// Indicates the platform, system, or client application from which the request originates.
+    /// This parameter is used to identify the source of the request, such as WordPress, Tilda, a custom website, mobile application, or another integration client.
+    /// </summary>
+    public string? SourcePlatform { get; set; }
+    
+    /// <summary>
+    /// Converts to <see cref="HttpRequestMessage" />.
+    /// </summary>
+    /// <param name="url">The URL.</param>
+    internal override HttpRequestMessage ToHttpRequest(string url)
+    {
+        var httpRequest = base.ToHttpRequest(url);
+
+        if (!string.IsNullOrWhiteSpace(SourcePlatform))
+        {
+            httpRequest.Headers.Add("X-Platform", SourcePlatform);
+        }
+        
+        return httpRequest;
+    }
 }
